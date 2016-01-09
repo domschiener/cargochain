@@ -1,0 +1,82 @@
+.cargo {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  min-height: 450px;
+  width: 850px;
+  margin: 0 auto 50px;
+}
+
+.cargo_header {
+  margin: 80px 25px;
+  color: #2B78C1;
+}
+
+.cargo_title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cargo_title span {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.cargo_input {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.cargo_left,
+.cargo_right {
+  margin: 50px 0;
+  padding: 0 25px;
+}
+
+.document {
+  font-size: 32px;
+}
+
+#document_ipfs:hover {
+  cursor: pointer;
+}
+
+.submit_button {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.payment_option {
+  text-align: center;
+  margin: 25px;
+}
+
+.payment_option span {
+  font-size: 20px;
+}
+
+.take_order {
+  font-size: 30px;
+}
+
+.shipment_header {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.shipment_date {
+  margin-top: 35px;
+  text-align: center;
+  color: #2B78C1;
+}
+
+.shipment_button {
+  margin: 25px;
+  font-size: 20px;
+}
+
+.inputArrival {
+  margin: 25px auto;
+  width: 250px;
+}

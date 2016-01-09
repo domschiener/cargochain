@@ -1,0 +1,17 @@
+.dispute_resolution {
+  text-align: center;
+}
+
+.dispute_header {
+  margin: 25px 0 55px;
+}
+
+.dispute_header span {
+  font-size: 36px;
+  font-weight: 500;
+  border-bottom: 6px solid #2B78C1;
+}
+
+.dispute_buttons {
+  margin-top: 65px;
+}

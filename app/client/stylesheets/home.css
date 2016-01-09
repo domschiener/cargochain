@@ -1,0 +1,271 @@
+body {
+  background: #ECEEF4;
+  font-family: 'Montserrat', Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+textarea:focus,
+input:focus,
+button:focus {
+    outline: 0;
+}
+
+.top_image {
+  text-align: center;
+}
+
+.top_image img {
+  width: 120px;
+  height: 120px;
+}
+
+.top_headline {
+  color: #2B78C1;
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/**
+  *     Rainbow Cargo Header
+  **/
+
+.cargo_header {
+  overflow: hidden;
+  width: 850px;
+  margin: 35px auto 0;
+}
+
+.rainbow_border {
+  padding: 0;
+  list-style:none;
+  width:auto;
+  font-size:0;
+  margin: 0;
+}
+
+.rainbow_border li {
+  display: inline-block;
+  width: 20%;
+  height: 30px;
+}
+
+.rainbow_border li:nth-child(1) {
+  background:#5cace2;
+  border-top-left-radius: 10px;
+}
+
+.rainbow_border li:nth-child(2) {
+  background:#3498db;
+}
+
+.rainbow_border li:nth-child(3) {
+  background:#2e88c5;
+}
+
+.rainbow_border li:nth-child(4) {
+  background:#2979af;
+}
+
+.rainbow_border li:nth-child(5) {
+  background:#246a99;
+  border-top-right-radius: 10px;
+}
+
+/**
+  *     Cargo Section
+  **/
+
+.home {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  min-height: 650px;
+  width: 850px;
+  margin: 0 auto 50px;
+}
+
+/**
+  *     First Step
+  **/
+
+.first_step {
+  margin: 60px 0;
+  padding: 0 25px;
+  color: #2B78C1;
+}
+
+.step_button {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 3px solid #2B78C1;
+  color: #2B78C1;
+  background: #fff;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.step_title {
+  font-size: 32px;
+  font-weight: 400;
+  margin-left: 25px;
+}
+
+.input_fields {
+  margin: 25px 0;
+}
+
+/*.input_field {
+  width: 220px;
+  height: 30px;
+  font-size: 22px;
+  margin: 15px 5px;
+  padding: 25px 0;
+  border: none;
+  border-bottom: solid 2px #2B78C1;
+  color: #12354c;
+}
+
+.input_field:focus {
+  border-bottom: solid 2px #246a99;
+}*/
+
+.step_element {
+  margin: 25px 0;
+}
+
+.step_subtitle {
+  font-size: 18px;
+}
+
+.step_maintitle {
+  font-size: 22px;
+}
+
+/**
+  *     Second Step
+  **/
+
+.second_step {
+  margin: 80px 0;
+  padding: 0 25px;
+  color: #2B78C1;
+}
+
+/**
+  *     Third Step
+  **/
+
+.third_step {
+  margin: 80px 0;
+  padding: 0 25px;
+  color: #2B78C1;
+}
+
+.date_input {
+  width: 250px;
+}
+
+/**
+  *     Fourth Step
+  **/
+
+.fourth_step {
+  margin: 80px 0;
+  padding: 0 25px;
+  color: #2B78C1;
+}
+
+.payment_input {
+  width: 150px;
+}
+
+/**
+  *     Fifth Step
+  **/
+
+.fifth_step {
+  margin: 80px 0;
+  padding: 0 25px;
+  color: #2B78C1;
+}
+
+.fifth_step .input_fields {
+  margin: 25px 0 0 150px;
+}
+
+
+.document_list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+  width: 450px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+}
+
+.document_item {
+	border-bottom: 1px solid #ddd;
+  background-color: #e58788;
+  height: 65px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.document_item:hover {
+  cursor: pointer;
+}
+
+.icon_left {
+  width: 65px;
+  height: 65px;
+  font-size: 28px;
+  margin-top: 30px;
+}
+
+.content {
+  font-size: 26px;
+}
+
+.selected {
+  color: rgb(92, 184, 92);
+  background-color: #cee9ce;
+}
+
+
+.file_upload {
+  font-size: 80px;
+  color: #246a99;
+  margin: 0 0 25px 50px;
+}
+
+#document_submit:hover {
+  cursor: pointer;
+}
+
+/**
+  *     Sixth Step
+  **/
+
+.sixth_step {
+  margin: 80px auto;
+  padding: 0 25px;
+  color: #2B78C1;
+}
+
+#cargo_submit {
+  font-size: 24px;
+  margin: 0 0 10px 35px;
+}
+
+#go_cargo {
+  margin: 0 0 10px 35px;
+}

@@ -1,0 +1,44 @@
+<template name="dispute">
+  <div class="container">
+    <div class="top_image">
+      <img src="/ship.png" />
+      <p class="top_headline">Dispute Resolution: Cargo #1234</p>
+    </div>
+  </div>
+  <div class="cargo_header">
+    <ul class="rainbow_border">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="container cargo">
+    <div class="cargo_header dispute_resolution">
+      <div class="dispute_header">
+        <span>Submitted Documents</span>
+      </div>
+      <div class="col-xs-4">
+        <h2>Letter of Credit</h2>
+        <a href="http://localhost:8080/ipfs/{{this.cargo.credit}}" class="glyphicon glyphicon-list-alt document" aria-hidden="true"></a>
+      </div>
+      <div class="col-xs-4">
+        <h2>Export Certificate</h2>
+        <a href="http://localhost:8080/ipfs/{{this.cargo.export}}" class="glyphicon glyphicon-list-alt document" aria-hidden="true"></a>
+      </div>
+      <div class="col-xs-4">
+        <h2>Proforma Invoice</h2>
+        <a href="http://localhost:8080/ipfs/{{this.cargo.invoice}}" class="glyphicon glyphicon-list-alt document" aria-hidden="true"></a>
+      </div>
+      <div class="col-xs-12 dispute_buttons">
+        <div class="col-xs-6">
+          <button class="btn btn-lg btn-warning shipment_button">Find Arbitrator</button>
+        </div>
+        <div class="col-xs-6">
+          <button class="btn btn-lg btn-danger shipment_button">Go to Court</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

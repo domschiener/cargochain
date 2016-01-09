@@ -1,0 +1,162 @@
+<template name="home">
+  <div class="container">
+    <div class="top_image">
+      <img src="/ship.png" />
+      <p class="top_headline">Submit new Cargo</p>
+    </div>
+  </div>
+  <div class="cargo_header">
+    <ul class="rainbow_border">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="container home">
+    <div class="first_step">
+      <div class="steps_header">
+        <button class="step_button">1</button>
+        <span class="step_title">Enter Basic Information</span>
+      </div>
+      <div class="row input_fields">
+        <div class="col-xs-6 form-group">
+          <form role="form">
+            <p class="step_maintitle">Importer</p>
+            <input id="importer_person" class="form-control step_element" type="text" placeholder="Importer Name">
+            <input id="importer_company" class="form-control step_element" type="text" placeholder="Importer Company">
+            <input id="importer_address" class="form-control step_element" type="text" placeholder="Importer Address">
+          </form>
+        </div>
+        <div class="col-xs-6 form-group">
+          <form role="form">
+            <p class="step_maintitle">Exporter</p>
+            <input id="exporter_person" class="form-control step_element" type="text" placeholder="Exporter Name">
+            <input id="exporter_company" class="form-control step_element" type="text" placeholder="Exporter Company">
+            <input id="exporter_address" class="form-control step_element" type="text" placeholder="Exporter Address">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="second_step">
+      <div class="steps_header">
+        <button class="step_button">2</button>
+        <span class="step_title">Cargo Information</span>
+      </div>
+      <div class="row input_fields">
+        <div class="col-xs-6">
+          <form role="form">
+            <div class="form-group step_element">
+              <p class="step_subtitle">Name of Goods</p>
+              <input id="name_goods" type="text" class="form-control">
+            </div>
+            <div class="form-group step_element">
+              <p class="step_subtitle">Description</p>
+              <textarea id="description" type="text" class="form-control"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-6">
+          <form role="form">
+            <div class="form-group step_element">
+              <p class="step_subtitle">Less Than Truckload</p>
+              <input id="less-than-truckload" class="BSswitch" type="checkbox">
+            </div>
+            <div class="form-group step_element">
+              <div class="col-xs-6">
+                <p class="step_subtitle">Quantity</p>
+                <input id="quantity" class="form-control" type="number" name="quantity" min="1" max="500">
+              </div>
+              <div class="col-xs-6">
+                <p class="step_subtitle">Total Weight</p>
+                <div class="input-group">
+                  <input id="weight" class="form-control" type="number" name="quantity" min="1" max="500">
+                  <span class="input-group-addon" id="basic-addon1">kg</span>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="third_step">
+      <div class="steps_header">
+        <button class="step_button">3</button>
+        <span class="step_title">Destination and Date</span>
+      </div>
+      <div class="row input_fields">
+        <div class="col-md-6">
+          <div class="step_element">
+            <p class="step_subtitle">Origin Port</p>
+            <select id="origin" class="select2_dropdown"></select>
+          </div>
+          <div class="step_element">
+            <p class="step_subtitle">Destination Port</p>
+            <select id="destination" class="select2_dropdown"></select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="step_element">
+            <p class="step_subtitle">Desired Arrival</p>
+            <input id="arrival_date" type="date" class="form-control date_input">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fourth_step">
+      <div class="steps_header">
+        <button class="step_button">4</button>
+        <span class="step_title">Payment Details</span>
+      </div>
+      <div class="row input_fields">
+        <div class="col-md-6">
+          <div class="step_element">
+            <p class="step_subtitle">Total Payment</p>
+            <div class="input-group payment_input">
+              <input id="payment" class="form-control" type="number" name="quantity" min="1">
+              <span class="input-group-addon" id="basic-addon1">¥</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="step_element">
+            <p class="step_subtitle">Delay Penalty</p>
+            <div class="input-group payment_input">
+              <input id="penalty" class="form-control" type="number" name="quantity">
+              <span class="input-group-addon" id="basic-addon1">¥</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fifth_step">
+      <div class="steps_header">
+        <button class="step_button">5</button>
+        <span class="step_title">Documents Upload</span>
+      </div>
+      <div class="row input_fields">
+        <ul class="document_list" id="list">
+  				<li id="credit" class="document_item">
+            <div class="icon_left"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></div>
+            <div class="content">Letter of Credit</div>
+          </li>
+          <li id="export" class="document_item">
+            <div class="icon_left"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></div>
+            <div class="content">Export Certificate</div>
+          </li>
+          <li id="invoice" class="document_item">
+            <div class="icon_left"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></div>
+            <div class="content">Buy apples</div>
+          </li>
+  			</ul>
+      </div>
+    </div>
+    <div id="home_submit" class="sixth_step">
+      <div class="steps_header">
+        <button class="step_button">6</button>
+        <button id="cargo_submit" class="btn btn-success btn-lg">Submit</button>
+      </div>
+    </div>
+  </div>
+</template>

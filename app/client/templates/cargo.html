@@ -1,0 +1,74 @@
+<template name="cargo">
+  <div class="container">
+    <div class="top_image">
+      <img src="/ship.png" />
+      <p class="top_headline">Cargo #1234</p>
+    </div>
+  </div>
+  <div class="cargo_header">
+    <ul class="rainbow_border">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="container cargo">
+    <div id="cargo_shipment" class="cargo_header">
+      <div class="cargo_title">
+        <span>Cargo Information</span>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 cargo_left">
+          <p class="cargo_info">Importer Name: <span class="cargo_input">{{this.owner.importer}}</span></p>
+          <p class="cargo_info">Importer Company: <span class="cargo_input">{{this.owner.importer_company}}</span></p>
+          <p class="cargo_info">Importer Address: <span class="cargo_input">{{this.owner.importer_address}}</span></p>
+          <br>
+          <p class="cargo_info">Exporter Name: <span class="cargo_input">{{this.owner.exporter}}</span></p>
+          <p class="cargo_info">Exporter Company: <span class="cargo_input">{{this.owner.exporter_address}}</span></p>
+          <p class="cargo_info">Exporter Address: <span class="cargo_input">{{this.owner.exporter_company}}</span></p>
+          <br>
+          <p class="cargo_info">Total Payment: <span class="cargo_input label label-success">{{this.cargo.payment}}</span></p>
+          <p class="cargo_info">Payment Penalty: <span class="cargo_input">{{this.cargo.penalty}}</span></p>
+        </div>
+        <div class="col-xs-6 cargo_right">
+          <p class="cargo_info">Name of Products: <span class="cargo_input">{{this.cargo.name_goods}}</span></p>
+          <p class="cargo_info">Description: <span class="cargo_input">{{this.cargo.description}}</span></p>
+          <p class="cargo_info">Less Than Truckload: <span class="cargo_input">{{this.cargo.truckload}}</span></p>
+          <p class="cargo_info">Quantity: <span class="cargo_input">{{this.cargo.quantity}}</span></p>
+          <p class="cargo_info">Total Weight: <span class="cargo_input">{{this.cargo.weight}}</span></p>
+          <br>
+          <p class="cargo_info">Origin Country: <span class="cargo_input">{{this.cargo.origin}}</span></p>
+          <p class="cargo_info">Destination: <span class="cargo_input">{{this.cargo.destination}}</span></p>
+          <br>
+          <p class="cargo_info">Deadline: <span class="label label-warning cargo_input">{{timestampToDate this.cargo.arrival_date}}</span></p>
+          <br>
+          <p class="cargo_info">Letter of Credit: <a href="http://localhost:8080/ipfs/{{this.cargo.credit}}" class="glyphicon glyphicon-list-alt document" aria-hidden="true"></a></p>
+          <p class="cargo_info">Export Certificate: <a href="http://localhost:8080/ipfs/{{this.cargo.export}}" class="glyphicon glyphicon-list-alt document" aria-hidden="true"></a></p>
+          <p class="cargo_info">Proforma Invoice: <a href="http://localhost:8080/ipfs/{{this.cargo.invoice}}" class="glyphicon glyphicon-list-alt document" aria-hidden="true"></a></p>
+        </div>
+      </div>
+      {{#if this.cargo.paid}}
+      <div class="submit_button">
+        <button id="releasePayment" class="btn btn-success btn-lg take_order">Release Payment</button>
+      </div>
+      {{else}}
+      <div class="payment_option">
+        <span id="pay_seller" class="label label-primary">Send <strong>{{this.cargo.payment}} Ξ</strong> to {{this.cargo.address}}</span>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  {{#if this.cargo.status}}
+  <div class="cargo" id="shipment">
+    <div class="cargo_header shipment_header">
+      <h1>Cargo has been shipped...</h1>
+      <img src="/cat.gif" />
+    </div>
+    <div class="shipment_date">
+      <button id="cargo_shipped" class="btn btn-lg btn-success shipment_button">Cargo Arrived</button>
+    </div>
+  </div>
+  {{/if}}
+</template>
