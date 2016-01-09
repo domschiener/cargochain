@@ -36,6 +36,12 @@ Template.cargo.events({
     var contract = shipmentContract.at(this.cargo.address);
     var cargoinfo = this;
 
+    var filter = contract.newAgreement({}, {fromBlock: 'latest', toBlock: 'latest'}, function(error, result) {
+      if (!error) {
+        console.log(result);
+      }
+    });
+
     contract.agreement(cargoinfo.owner.exporter, cargoinfo.owner.exporter_company, cargoinfo.owner.exporter_address, {from: web3.eth.accounts[3], value: web3.toWei(cargoinfo.cargo.payment, 'ether'), gas: 500000}, function(error, success) {
       if(!error) {
         console.log("Successfully sent transaction.");
@@ -49,6 +55,12 @@ Template.cargo.events({
   'click #releasePayment': function() {
     var shipmentContract = web3.eth.contract([{"constant":true,"inputs":[],"name":"seller","outputs":[{"name":"name","type":"bytes32"},{"name":"company","type":"bytes32"},{"name":"addr","type":"bytes32"},{"name":"account","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"arrival","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"_name","type":"bytes32"},{"name":"_company","type":"bytes32"},{"name":"_addr","type":"bytes32"}],"name":"agreement","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"buyer","outputs":[{"name":"name","type":"bytes32"},{"name":"company","type":"bytes32"},{"name":"addr","type":"bytes32"},{"name":"account","type":"address"},{"name":"paid","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"releasePayment","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"cargo","outputs":[{"name":"name","type":"bytes32"},{"name":"description","type":"string"},{"name":"truckload","type":"bool"},{"name":"quantity","type":"uint256"},{"name":"weight","type":"uint256"},{"name":"origin","type":"bytes32"},{"name":"destination","type":"bytes32"},{"name":"startdate","type":"uint256"},{"name":"deadline","type":"uint256"},{"name":"payment","type":"uint256"},{"name":"penalty","type":"uint256"},{"name":"hash","type":"string"},{"name":"active","type":"bool"}],"type":"function"},{"constant":false,"inputs":[],"name":"escrow","outputs":[],"type":"function"},{"inputs":[{"name":"_name","type":"bytes32"},{"name":"_company","type":"bytes32"},{"name":"_addr","type":"bytes32"},{"name":"cargoname","type":"bytes32"},{"name":"_description","type":"string"},{"name":"_truckload","type":"bool"},{"name":"_quantity","type":"uint256"},{"name":"_weight","type":"uint256"},{"name":"_origin","type":"bytes32"},{"name":"_destination","type":"bytes32"},{"name":"_deadline","type":"uint256"},{"name":"_penalty","type":"uint256"},{"name":"_hash","type":"string"}],"type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"name":"s","type":"string"},{"indexed":false,"name":"owner","type":"bytes32"},{"indexed":false,"name":"purchaser","type":"bytes32"}],"name":"newAgreement","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"s","type":"string"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"paymentReleased","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"s","type":"string"},{"indexed":false,"name":"amount","type":"uint256"}],"name":"delayedShipment","type":"event"}]);
     var contract = shipmentContract.at(this.cargo.address);
+
+    var filter = contract.paymentReleased({}, {fromBlock: 'latest', toBlock: 'latest'}, function(error, result) {
+      if (!error) {
+        console.log(result);
+      }
+    }); 
 
     contract.releasePayment({from: web3.eth.accounts[3], gas: 500000}, function(error, success) {
       if(!error) {
