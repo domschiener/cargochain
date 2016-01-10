@@ -4,7 +4,7 @@ CargoChain is a settlement platform that provides a secure, trustless and effici
 
 The biggest advantage of CargoChain is that it offers a single point of review for all involved parties. This way the necessary documents do not have to be sent to all parties but are instead uploaded to the Blockchain/IPFS for further verification and review. Not only does this significantly increase efficiency, reduce costs and increase speed of shipping, but it also saves a lot of trees (which makes pandas happy).
 
-![alt tag](http://i.imgur.com/c60yPD5.png)
+![alt tag](/presentation/header.png)
 
 # The Stack
 
@@ -26,4 +26,4 @@ The project is structured in multiple folders
 
 # How to Run
 
-Inside the `app` folder (with an Ethereum node running), simply type `meteor` and the app should automatically be available at `http://localhost:3000`. Feel free to play around with it and test all the functions :) 
+Inside the `app` folder (with an Ethereum node running), simply type `meteor` and the app should automatically be available at `http://localhost:3000`. Feel free to play around with it and test all the functions :)
