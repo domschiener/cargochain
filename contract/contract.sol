@@ -20,7 +20,7 @@ contract Shipment {
   struct Cargo {
     bytes32 name;
     string description;
-    bool truckload;
+    bytes32 hscode;
     uint quantity;
     uint weight;
 
@@ -31,13 +31,20 @@ contract Shipment {
     uint payment;
     uint penalty;
     string hash;
+  }
+
+  struct Shipping {
+    bytes32 vessel;
+    bytes32 voyage;
+    bytes32 booking;
 
     bool active;
   }
 
-  Seller public seller;
+  Seller seller;
   Cargo public cargo;
-  Buyer public buyer;
+  Shipping public ship;
+  Buyer buyer;
 
   // Events, used to keep track of progress
   event newAgreement(string s, bytes32 owner, bytes32 purchaser);
@@ -49,14 +56,17 @@ contract Shipment {
                     bytes32 _addr,
                     bytes32 cargoname,
                     string _description,
-                    bool _truckload,
+                    bytes32 _hscode,
                     uint _quantity,
                     uint _weight,
                     bytes32 _origin,
                     bytes32 _destination,
                     uint _deadline,
                     uint _penalty,
-                    string _hash) {
+                    string _hash,
+                    bytes32 _vessel,
+                    bytes32 _voyage,
+                    bytes32 _booking) {
     seller.name = _name;
     seller.company = _company;
     seller.addr = _addr;
@@ -64,7 +74,7 @@ contract Shipment {
 
     cargo.name = cargoname;
     cargo.description = _description;
-    cargo.truckload = _truckload;
+    cargo.hscode = _hscode;
     cargo.quantity = _quantity;
     cargo.weight = _weight;
 
@@ -74,7 +84,10 @@ contract Shipment {
     cargo.penalty = _penalty;
     cargo.hash = _hash;
 
-    cargo.active = false;
+    ship.vessel = _vessel;
+    ship.voyage = _voyage;
+    ship.booking = _booking;
+    ship.active = false;
   }
 
   function agreement(bytes32 _name, bytes32 _company, bytes32 _addr) {
@@ -86,7 +99,7 @@ contract Shipment {
     buyer.paid = false;
 
     cargo.startdate = block.timestamp;
-    cargo.active = true;
+    ship.active = true;
 
     newAgreement("New Agreement between two Parties!", seller.name, buyer.name);
   }

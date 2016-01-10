@@ -55,6 +55,10 @@
               <p class="step_subtitle">Description</p>
               <textarea id="description" type="text" class="form-control"></textarea>
             </div>
+            <div class="form-group step_element">
+              <p class="step_subtitle">HS Code</p>
+              <input id="hs_code" type="text" class="form-control">
+            </div>
           </form>
         </div>
         <div class="col-xs-6">
@@ -83,7 +87,7 @@
     <div class="third_step">
       <div class="steps_header">
         <button class="step_button">3</button>
-        <span class="step_title">Destination and Date</span>
+        <span class="step_title">Shipping Information</span>
       </div>
       <div class="row input_fields">
         <div class="col-md-6">
@@ -95,11 +99,23 @@
             <p class="step_subtitle">Destination Port</p>
             <select id="destination" class="select2_dropdown"></select>
           </div>
-        </div>
-        <div class="col-md-6">
           <div class="step_element">
             <p class="step_subtitle">Desired Arrival</p>
             <input id="arrival_date" type="date" class="form-control date_input">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group step_element">
+            <p class="step_subtitle">Vessel Name</p>
+            <input id="vessel_name" type="text" class="form-control">
+          </div>
+          <div class="form-group step_element">
+            <p class="step_subtitle">Voyage Number</p>
+            <input id="voyage_number" type="text" class="form-control">
+          </div>
+          <div class="form-group step_element">
+            <p class="step_subtitle">Booking Reference</p>
+            <input id="booking_ref" type="text" class="form-control">
           </div>
         </div>
       </div>
@@ -147,7 +163,7 @@
           </li>
           <li id="invoice" class="document_item">
             <div class="icon_left"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span></div>
-            <div class="content">Buy apples</div>
+            <div class="content">Proforma Invoice</div>
           </li>
   			</ul>
       </div>

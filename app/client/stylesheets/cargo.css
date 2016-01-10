@@ -38,7 +38,8 @@
   font-size: 32px;
 }
 
-#document_ipfs:hover {
+#document_ipfs:hover,
+#pay_seller:hover {
   cursor: pointer;
 }
 
@@ -63,6 +64,11 @@
 .shipment_header {
   text-align: center;
   margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .shipment_date {
