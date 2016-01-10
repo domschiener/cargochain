@@ -64,7 +64,7 @@ Template.cargo.events({
     })
   },
   'click #cargo_shipped': function() {
-    $('#cargo_shipped').replaceWith('<div class="form-group"><h2>Anticipated Date of Arrival</h2><input id="dateofarrival" type="date" class="form-control inputArrival"><button id="submitDate" class="btn btn-lg btn-success shipment_button">Ask for Payment</button></div>');
+    $('#cargo_shipped').replaceWith('<div class="form-group"><h2>Anticipated Date of Arrival</h2><input id="dateofarrival" type="date" class="form-control inputArrival"><button id="submitDate" class="btn btn-lg btn-success shipment_button">Continue</button></div>');
   },
   'click #submitDate': function() {
     $('#shipment').html('<div class="cargo_header shipment_header"><h2>Cargo arrived at Port</h2><img src="/cargo.jpg" /><button id="disputePayment" class="btn btn-lg btn-danger shipment_button">Dispute Payment</button></div>');
